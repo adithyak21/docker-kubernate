@@ -16,9 +16,9 @@ after_success:
   - docker build -t adithya-tech/multi-server ./server
   - docker build -t adithya-tech/multi-worker ./worker
   # Log in to the docker CLI
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-  # Take those images and push them to docker hub
-  - docker push adithya-tech/multi-client
-  - docker push adithya-tech/multi-nginx
-  - docker push adithya-tech/multi-server
-  - docker push adithya-tech/multi-worker
+ # - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  ## Take those images and push them to docker hub
+ # - docker push adithya-tech/multi-client
+ # - docker push adithya-tech/multi-nginx
+ # - docker push adithya-tech/multi-server
+ # - docker push adithya-tech/multi-worker
