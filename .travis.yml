@@ -5,20 +5,20 @@ services:
   - docker
 
 before_install:
-  - docker build -t adithya-tech/react-test -f ./client/Dockerfile.dev ./client
+  - docker build -t adithyak21/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run -e CI=true adithya-tech/react-test npm test
+  - docker run -e CI=true adithyak21/react-test npm test
 
 after_success:
-  - docker build -t adithya-tech/multi-client ./client
-  - docker build -t adithya-tech/multi-nginx ./nginx
-  - docker build -t adithya-tech/multi-server ./server
-  - docker build -t adithya-tech/multi-worker ./worker
+  - docker build -t adithyak21/multi-client ./client
+  - docker build -t adithyak21/multi-nginx ./nginx
+  - docker build -t adithyak21/multi-server ./server
+  - docker build -t adithyak21/multi-worker ./worker
   # Log in to the docker CLI
- # - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   ## Take those images and push them to docker hub
- # - docker push adithya-tech/multi-client
- # - docker push adithya-tech/multi-nginx
- # - docker push adithya-tech/multi-server
- # - docker push adithya-tech/multi-worker
+  - docker push adithyak21/multi-client
+  - docker push adithyak21/multi-nginx
+  - docker push adithyak21/multi-server
+  - docker push adithyak21/multi-worker
